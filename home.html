@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Explore major U.S. tornadoes, tornado science, historical events, and severe weather safety through interactive maps and educational resources.">
+		<meta name="author" content="Paighton Weber">
+		<title>The Tornado Archive</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="icon" type="image/jpg" href="images/favicon.jpg">
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	</head>
+<body>
+	<div id="wrapper">
+	
+	<header>
+		<a href="home.html">
+		    <img src="images/headerstorm.jpg" 
+			alt="Storm Clouds Banner"
+			title="Return to The Tornado Archive home page">
+		</a>
+			<h1>The Tornado Archive</h1>
+	</header>
+	
+	<nav>
+		<a href="home.html" class="active">Home</a>
+		<a href="map.html">Map</a>
+		<a href="timeline.html">Timeline</a>
+		<a href="science.html">Science</a>
+		<a href="safety.html">Safety</a>
+		<a href="form.html">Share Your Story</a>
+	</nav>
+	
+	<main>
+		 <div id="hero">
+			<div class="hero-overlay">
+
+			<h2>Understanding America's Most Powerful Storms</h2>
+				<p>
+					Tornadoes have shaped communities across the United States. This site explores historic tornadoes, how they form, where they happen, and how people can stay safe.
+				</p>
+			</div>
+		</div>
+			<section class="featured-link">
+				<h2>Website Purpose and Intended Audience</h2>
+				<p>
+					This website educates visitors about major U.S. tornadoes, tornado formation, and severe weather safety through maps, historical events, and preparedness information.
+					This website is intended for students, teachers, weather enthusiasts, and anyone
+					who wants to learn more about tornado history and preparedness in an easy-to-use
+					format.
+				</p>
+			</section>
+		<div class="home-map-row">
+				<figure class="home-image">
+					<img src="images/tornado-watch1.jpg"
+						 alt="Tornado Watch Warning Sign"
+						 title="Tornado Watch">
+					<figcaption>
+						Source: tomsriver.org
+					</figcaption>
+				</figure>
+			<section class="featured-link">
+				<h2>Explore the Interactive Tornado Map</h2>
+					<p>
+						View major tornado events across the United States and hover over each marker
+						to learn more about these historic storms.
+					</p>
+					<a href="map.html" class="map-button">Go to the Map</a>
+			</section>
+		</div>
+		<div class="home-bottom">
+			<section class="safety-preview">
+				<h3>Tornado Safety Reminder</h3>
+					<p>
+						Know where to shelter before severe weather arrives. A basement or small
+						interior room on the lowest floor is usually the safest place.
+					</p>
+			</section>
+			<section class="fact-box">
+				<h3>Did You Know?</h3>
+					<p id="tornadoFact">
+						Tornadoes have been recorded in all 50 states, although they are most common
+						in the Great Plains region known as Tornado Alley.
+					</p>
+					
+					<button id="factButton" type="button">Show Another Fact </button>
+			</section>
+		</div>
+	</main>
+	<footer>
+		<p class="citation">
+				Banner image source: WallpaperAccess.
+		</p>
+		<p>
+			<a href="sitemap.html">Site Map</a>
+			Contact:
+			<a href="mailto:weberp01@email.franklin.edu">
+            weberp01@email.franklin.edu
+			</a>
+		</p>
+	</footer>
+	</div>
+		<script>
+		$(document).ready(function() {
+
+			// Cycles through tornado facts and changes the
+			// appearance of the fact box each time the button is clicked.
+
+			const tornadoFacts = [
+				"Tornadoes have been recorded in all 50 states, although they are most common in the Great Plains region known as Tornado Alley.",
+				"The United States experiences more tornadoes than any other country.",
+				"Tornadoes can occur during any month of the year.",
+				"Some tornadoes can remain on the ground for more than an hour.",
+				"Most tornadoes last less than ten minutes."
+			];
+
+			let factIndex = 0;
+
+			$("#factButton").click(function() {
+				factIndex = (factIndex + 1) % tornadoFacts.length;
+
+				$("#tornadoFact").text(tornadoFacts[factIndex]);
+
+				$(".fact-box").addClass("fact-change");
+
+				setTimeout(function() {
+					$(".fact-box").removeClass("fact-change");
+				}, 500);
+			});
+
+		});
+	</script>
+</body>
+</html>
+	
+
